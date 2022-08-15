@@ -14,7 +14,7 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
-./deploy/nodes/node0/geth
-./deploy/nodes/node1/geth
-./deploy/nodes/node2/geth
-./deploy/nodes/node3/geth
+deploy/nodes/node0/data/geth
+deploy/nodes/node1/data/geth
+deploy/nodes/node2/data/geth
+deploy/nodes/node3/data/geth
