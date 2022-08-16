@@ -18,3 +18,6 @@ deploy/nodes/node0/data/geth
 deploy/nodes/node1/data/geth
 deploy/nodes/node2/data/geth
 deploy/nodes/node3/data/geth
+.vscode/configurationCache.log
+.vscode/dryrun.log
+.vscode/targets.log
