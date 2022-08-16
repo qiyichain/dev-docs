@@ -18,10 +18,10 @@ init: genesis
 	geth --datadir=./nodes/node3/data init ./genesis.json
 
 clean:
-	rm -rf ./nodes/node0/data
-	rm -rf ./nodes/node1/data
-	rm -rf ./nodes/node2/data
-	rm -rf ./nodes/node3/data
+	rm -rf ./nodes/node0/data/geth
+	rm -rf ./nodes/node1/data/geth
+	rm -rf ./nodes/node2/data/geth
+	rm -rf ./nodes/node3/data/geth
 
 start-node0:
 	geth --datadir ./nodes/node0/data --ipcdisable --syncmode full --http --allow-insecure-unlock --http.addr "0.0.0.0" --unlock 0x4045d4ef78738b9750cc266bb972f66d950dc942 --password ./password.txt --mine --bootnodes  enode://2aa08cb22a14e1cb357a5638735f5c6c5591c5d3622b8a0c432c8c3f9633c0b9d4da44d0fa281ca0b1149bbd7809f8022b0305309902416db651e54ba0682be4@127.0.0.1:0?discport=30301
