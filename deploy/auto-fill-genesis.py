@@ -7,6 +7,7 @@
 
 from typing import List
 import os
+import time
 
 def read_node_address_from_nodes() -> List[str]:
     dirs = [
@@ -39,6 +40,8 @@ def gen_genesis_extra_data(miner_addrs: List[str]):
     extra_data = '0x' + prefix_32bytes + addrs_str + suffix_65bytes
     return extra_data
 
+def get_current_timestamp():
+    return int(time.time())
 
 
 def update_genesis_extra_data(extra_data: str):
@@ -54,13 +57,19 @@ def update_genesis_extra_data(extra_data: str):
             if '"extraData"' in line:
                 new_line = '  "extraData":"{}",\n'.format(extra_data)    
                 lines[i] = new_line
-                break
+                continue
+            if '"timestamp"' in line:
+                new_line = '  "timestamp":"{}",\n'.format(hex(get_current_timestamp() - 600))    
+                lines[i] = new_line
+                continue
+
         pass
 
     with open('genesis.json', 'w') as outfile:
         outfile.writelines(lines)
 
     pass
+
 
 
 def main():
