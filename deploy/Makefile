@@ -40,4 +40,4 @@ gen-bootnode:
 	bootnode -genkey bnode/boot.key
 
 start-bootnode:
-	bootnode -nodekey bnode/boot.key
+	bootnode -nodekey bnode/boot.key  -addr 172.16.100.101:30301
