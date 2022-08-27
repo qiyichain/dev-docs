@@ -1,0 +1,12 @@
+{
+    "node0_ip": "172.16.100.101", 
+    "node1_ip": "172.16.100.102",
+    "node2_ip": "172.16.100.103",
+    "node3_ip": "172.16.100.104",
+    "syncnode_ip": "172.16.100.105",
+    "archivenode_ip": "172.16.100.106",
+    "influxdb_ip":"172.16.100.105",
+    "influxdb_port":"8086",
+    "influxdb_username":"influxdb",
+    "influxdb_password":"password"
+}
