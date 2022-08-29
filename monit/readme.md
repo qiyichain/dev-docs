@@ -60,13 +60,13 @@ docker exec -it influxdb bash
 # 创建数据库（节点提交监控数据用），通常为了避免数据覆盖，需要分别给共识节点创建独立的数据库⚠️ 
 # Grafana 监控也需要配置多个数据源（DataSource）
 # 给节点 0 添加数据库
->> creata database node0 
+>> create database node0 
 # 给节点 1 添加数据库
->> creata database node1
+>> create database node1
 # 给节点 2 添加数据库
->> creata database node2
+>> create database node2
 # 给节点 3 添加数据库
->> creata database node3
+>> create database node3
 
 # 退出
 >> exit
