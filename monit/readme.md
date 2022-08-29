@@ -150,7 +150,7 @@ https://github.com/qiyichain/dev-docs/blob/master/monit/node_dashboard.json
 
 ![image-20220829114719906](./image/nodeDashboard.png)
 
-![image-20220829114902611](/Users/teslapatrick/go/src/github.com/qiyichain/dev-docs/monit/image/nodeDashboardDataSource.png)
+![image-20220829114902611](./image/nodeDashboardDataSource.png)
 
 5. 其他问题
 * 添加数据源参考[官方文档](https://grafana.com/docs/grafana/latest/datasources/influxdb/)
