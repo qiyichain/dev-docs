@@ -23,8 +23,8 @@ C((验证节点node2))--p2p---D((验证节点node3))
 A--p2p---C
 B--p2p---D
 
-D-.p2p.-E{{归档节点}}
-D-.p2p.-H{{同步节点}}
+D-.p2p.-E{{归档节点archivenode}}
+D-.p2p.-H{{同步节点syncnode}}
 
 E-.RPC.--G(区块浏览器)
 E-.RPC.--F(其他项目)
