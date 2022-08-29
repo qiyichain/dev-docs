@@ -58,7 +58,7 @@ H-.RPC.--F(其他项目)
 
 - chainId: `2285`
 - 初始账户:
-  - 账户1：`00x9dEaa276B25863D5Df573fD00f364b64B72Ef0Ab`（同时作为系统合约的admin）
+  - 账户1：`0x9dEaa276B25863D5Df573fD00f364b64B72Ef0Ab`（同时作为系统合约的admin）
   - 账户2：`0x9dbb1224029B56dADABF78B794147840099eD4b2` （备份账户）
   - 账户3：`0x6dC0EB347060FC84d98A3c3F31c7Ba8E2EAc6584` （备份账户）
 
