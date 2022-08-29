@@ -1,4 +1,4 @@
-# 奇异链主网(mainnet)搭建步骤
+# 奇异链主网(mainnet)节点部署步骤
 
 重要的事情说三遍：
 - ❗特别注意：不要使用`ansible`进行批量操作！
@@ -10,7 +10,7 @@
 
 节点类型定义：
 
-- 验证节点(node0~node3)：参与共识和链治理，不对外
+- 验证节点(node0 ~ node3)：参与共识和链治理，不对外
 - 同步节点(syncnode)：数据量等于验证节点，不参与共识和链治理，直接对外提供RPC服务
 - 归档节点(archivenode)：拥有全量历史数据，数据量大于验证节点和同步节点，不参与共识。区块浏览器需要用到此节点
 
@@ -45,10 +45,10 @@ H-.RPC.--F(其他项目)
 - 系统：Linux/MacOS
 - 工具：`yum install make automake jq sshpass -y` 或 `sudo apt install make automake sshpass jq -y`
 - Python3: `yum install python3` 或 `sudo apt install python3 -y`
-- 下载peculiar最新的发布的版本可执行文件，解压，将`geth`加到`/usr/bin/geth`：https://github.com/qiyichain/peculiar/releases
+- 下载peculiar最新的发布的版本可执行文件，解压，将`geth`加到`/usr/bin/`目录：https://github.com/qiyichain/peculiar/releases
 - 检查geth是否能执行：`geth --help`
-- 下载`bootnode`, 将`bootnode`加入`/usr/bin/bootnode`
-
+- 下载`bootnode`, 将`bootnode`加入`/usr/bin/`目录
+- 在node0在`/etc/ssh/ssh_config`加入`StrictHostKeyChecking no`，防止后续执行脚本进行`scp`时需要确认公钥
 
 ## 监控数据库
 
@@ -70,7 +70,7 @@ H-.RPC.--F(其他项目)
 
 ## 生成脚本的配置说明
 
-gen-script-config.json
+gen-script-config.json，需根据实际情况修改以下配置：
 
 ```js
 {
@@ -108,7 +108,7 @@ gen-script-config.json
 
 ### 4.拷贝数据到其他节点服务器
 
-> 需要在环境变量设置节点的密码 , `export NODEPASS=xxxxxx`
+> 需要在环境变量设置节点的密码 , `export NODEPASS=xxxxxx`，其中`xxxxxx`需要替换节点`ssh`密码
 
 - `make copy`
 
@@ -120,7 +120,7 @@ gen-script-config.json
 - `make start-bootnode`
 
 
-### 6.进入各个节点的 `/data/nodeX`目录
+### 6.进入各个节点的 `/data/nodeX`获取`/data/syncnode`或`/data/archivenode`目录
 
 - 启动： `./start.sh` 
 - 查看日志：`tail -f ./logs/chain.log`
