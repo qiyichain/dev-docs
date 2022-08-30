@@ -64,7 +64,7 @@ else
 	@sshpass -p $(NODEPASSA) scp $(shell which geth) root@$(shell cat gen-script-config.json | jq .archivenode_ip | sed  's\"\\g'):/usr/bin/geth
 	@echo "archivenode copy finished"
 	@sshpass -p $(NODEPASSS) scp -r ./nodes/syncnode root@$(shell cat gen-script-config.json | jq .syncnode_ip | sed  's\"\\g'):/data
-	@sshpass -p $(NODEPASSS) scp $(shell which geth) root@$(shell cat gen-script-config.json | jq .nsyncnode_ip | sed  's\"\\g'):/usr/bin/geth
+	@sshpass -p $(NODEPASSS) scp $(shell which geth) root@$(shell cat gen-script-config.json | jq .syncnode_ip | sed  's\"\\g'):/usr/bin/geth
 	@echo "syncnode copy finished"
 	@echo "all ok"
 endif
