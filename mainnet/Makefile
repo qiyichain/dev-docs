@@ -54,16 +54,16 @@ else
 	@sshpass -p $(NODEPASS1) scp -r ./nodes/node1 root@$(shell cat gen-script-config.json | jq .node1_ip | sed  's\"\\g'):/data
 	@sshpass -p $(NODEPASS1) scp $(shell which geth) root@$(shell cat gen-script-config.json | jq .node1_ip | sed  's\"\\g'):/usr/bin/geth
 	@echo "node1 copy finished"
-	@sshpass -p $(NODEPASS2) scp -r dev-docs/deploy/nodes/node2 root@$(shell cat gen-script-config.json | jq .node2_ip | sed  's\"\\g'):/data
+	@sshpass -p $(NODEPASS2) scp -r ./nodes/node2 root@$(shell cat gen-script-config.json | jq .node2_ip | sed  's\"\\g'):/data
 	@sshpass -p $(NODEPASS2) scp $(shell which geth) root@$(shell cat gen-script-config.json | jq .node2_ip | sed  's\"\\g'):/usr/bin/geth
 	@echo "node2 copy finished"
-	@sshpass -p $(NODEPASS3) scp -r dev-docs/deploy/nodes/node3 root@$(shell cat gen-script-config.json | jq .node3_ip | sed  's\"\\g'):/data
+	@sshpass -p $(NODEPASS3) scp -r ./nodes/node3 root@$(shell cat gen-script-config.json | jq .node3_ip | sed  's\"\\g'):/data
 	@sshpass -p $(NODEPASS3) scp $(shell which geth) root@$(shell cat gen-script-config.json | jq .node3_ip | sed  's\"\\g'):/usr/bin/geth
 	@echo "node3 copy finished"
-	@sshpass -p $(NODEPASSA) scp -r dev-docs/deploy/nodes/archivenode root@$(shell cat gen-script-config.json | jq .archivenode_ip | sed  's\"\\g'):/data
+	@sshpass -p $(NODEPASSA) scp -r ./nodes/archivenode root@$(shell cat gen-script-config.json | jq .archivenode_ip | sed  's\"\\g'):/data
 	@sshpass -p $(NODEPASSA) scp $(shell which geth) root@$(shell cat gen-script-config.json | jq .archivenode_ip | sed  's\"\\g'):/usr/bin/geth
 	@echo "archivenode copy finished"
-	@sshpass -p $(NODEPASSS) scp -r dev-docs/deploy/nodes/syncnode root@$(shell cat gen-script-config.json | jq .syncnode_ip | sed  's\"\\g'):/data
+	@sshpass -p $(NODEPASSS) scp -r ./nodes/syncnode root@$(shell cat gen-script-config.json | jq .syncnode_ip | sed  's\"\\g'):/data
 	@sshpass -p $(NODEPASSS) scp $(shell which geth) root@$(shell cat gen-script-config.json | jq .nsyncnode_ip | sed  's\"\\g'):/usr/bin/geth
 	@echo "syncnode copy finished"
 	@echo "all ok"
