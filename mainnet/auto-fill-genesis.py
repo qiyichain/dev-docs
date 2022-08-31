@@ -41,7 +41,9 @@ def gen_genesis_extra_data(miner_addrs: List[str]):
     return extra_data
 
 def get_current_timestamp():
-    return int(time.time())
+    cur = int(time.time()) - 100
+    good_time = 1662001328 # 北京时间：2022-09-01 11:02:08
+    return cur if cur < good_time else good_time
 
 
 def update_genesis_extra_data(extra_data: str):
@@ -59,7 +61,7 @@ def update_genesis_extra_data(extra_data: str):
                 lines[i] = new_line
                 continue
             if '"timestamp"' in line:
-                new_line = '  "timestamp":"{}",\n'.format(hex(get_current_timestamp() - 600))    
+                new_line = '  "timestamp":"{}",\n'.format(hex(get_current_timestamp()))    
                 lines[i] = new_line
                 continue
 
