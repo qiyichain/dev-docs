@@ -1,6 +1,4 @@
 # coding: utf-8
-
-
 #author: yqq
 #date: 2022-08-15
 #descriptions: 自动读取nodes下面的数据,填充./genesis.json中的extraData字段
@@ -10,15 +8,21 @@ import os
 import time
 
 def read_node_address_from_nodes() -> List[str]:
-    dirs = [
+    """_summary_
+
+    Returns:
+        List[str]: _description_
+    """
+
+    dir_s  = [
         './nodes/node0/data/keystore',
         './nodes/node1/data/keystore',
         './nodes/node2/data/keystore',
         './nodes/node3/data/keystore',
     ]
     ret_addrs = []
-    for dir in dirs: 
-        filenames = os.listdir(dir)
+    for d in dir_s:
+        filenames = os.listdir(d)
         for name in filenames:
             addr =  name[name.rfind('--') + 2 : ]
             ret_addrs.append(addr)
@@ -41,6 +45,10 @@ def gen_genesis_extra_data(miner_addrs: List[str]):
     return extra_data
 
 def get_current_timestamp():
+    """
+    Returns:
+        _type_: _description_
+    """
     cur = int(time.time()) - 100
     good_time = 1662001328 # 北京时间：2022-09-01 11:02:08
     return cur if cur < good_time else good_time
@@ -51,36 +59,35 @@ def update_genesis_extra_data(extra_data: str):
     更新genesis.json中的extraData字段,其他字段保持不变(位置)
     """
     lines = []
-    with open('./example-genesis.json', 'r') as infile:
+    with open('./example-genesis.json', 'r', encoding='latin') as infile:
         lines = infile.readlines()
-        print('len={}'.format(len(lines)))
-        for i in range(len(lines)):
-            line = lines[i]
+        print(f'len={len(lines)}')
+        for i, line in enumerate(lines):
             if '"extraData"' in line:
-                new_line = '  "extraData":"{}",\n'.format(extra_data)    
+                new_line = f'  "extraData":"{extra_data}",\n'
                 lines[i] = new_line
                 continue
             if '"timestamp"' in line:
-                new_line = '  "timestamp":"{}",\n'.format(hex(get_current_timestamp()))    
+                new_line = f'  "timestamp":"{hex(get_current_timestamp())}",\n'
                 lines[i] = new_line
                 continue
 
-        pass
 
-    with open('genesis.json', 'w') as outfile:
+    with open('genesis.json', 'w', encoding='latin') as outfile:
         outfile.writelines(lines)
 
-    pass
 
 
 
 def main():
+    """_summary_
+    """
+
     addrs = read_node_address_from_nodes()
     print(addrs)
     extra_data = gen_genesis_extra_data(addrs)
     print(extra_data)
     update_genesis_extra_data(extra_data)
-    pass
 
 
 if __name__ == '__main__':
