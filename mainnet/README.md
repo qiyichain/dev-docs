@@ -18,23 +18,43 @@
 
 graph LR
 
-A((验证节点node0))--p2p---B((验证节点node1))
-C((验证节点node2))--p2p---D((验证节点node3))
-A--p2p---C
-B--p2p---D
+    subgraph 阿里云
 
-D-.p2p.-E{{归档节点archivenode}}
-D-.p2p.-H{{同步节点syncnode}}
+        subgraph 验证节点
+            A((验证节点node0))
+            B((验证节点node1))
+            C((验证节点node2))
+            D((验证节点node3))
+        end
 
-E-.RPC.--G(区块浏览器)
-E-.RPC.--F(其他项目)
-H-.RPC.--F(其他项目)
+        E{{归档节点archivenode}}
+        F{{同步节点syncnode}}
+        G(区块浏览器)
+        K(内部应用项目)
+
+        A--p2p---B
+        C--p2p---D
+        A--p2p---C
+        B--p2p---D
+
+        D-.p2p.-E
+        D-.p2p.-F
+
+        E-.http/rpc.-G
+        F-.http/rpc.-K
+        E-.http/rpc.-K
+    end
+
+    subgraph 其他云
+        F-.p2p.-J((备份同步节点))
+    end
+
 ```
 
 - ❗注意: 上图中节点间通信使用p2p通信，节点会互相连接并进行通信
 
 - 所有节点默认p2p端口(TCP/UDP): `32668`
-- 归档节点和同步节点的默认RPC端口(TCP): 
+- 归档节点和同步节点的默认RPC端口(TCP):
   - http: `8545`
   - websocket：`8546`
 
@@ -52,7 +72,7 @@ H-.RPC.--F(其他项目)
 
 ## 监控数据库
 
-- 需要某台服务器(如：区块浏览器服务器)上安装，InfluxDB, 配置用户名和密码，并创建数据库：`node0`、`node1`, `node2`, `node3`, `archivenode`, `syncnode` 
+- 需要某台服务器(如：区块浏览器服务器)上安装，InfluxDB, 配置用户名和密码，并创建数据库：`node0`、`node1`, `node2`, `node3`, `archivenode`, `syncnode`
 
 ## 关键参数
 
@@ -81,7 +101,7 @@ gen-script-config.json，需根据实际情况修改以下配置：
     "syncnode_ip": "172.16.100.105", // 同步节点（内网ip）
     "archivenode_ip": "172.16.100.106",  // 归档节点（内网ip）
     "influxdb_ip":"172.16.100.105", // influxdb 数据库ip
-    "influxdb_port":"8086", 
+    "influxdb_port":"8086",
     "influxdb_username":"influxdb",
     "influxdb_password":"password"
 }
@@ -122,7 +142,7 @@ gen-script-config.json，需根据实际情况修改以下配置：
 
 ### 6.进入各个节点的 `/data/nodeX`获取`/data/syncnode`或`/data/archivenode`目录
 
-- 启动： `./start.sh` 
+- 启动： `./start.sh`
 - 查看日志：`tail -f ./logs/chain.log`
 
 
