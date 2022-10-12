@@ -13,6 +13,7 @@
   - [区块浏览器部署文档](https://github.com/qiyichain/blockscout/blob/qiyichain/doc-zh/deploy.md)
 - [奇异链生态](./docs/8.奇异链生态.md)
 - [外部接入](./docs/9.外部接入.md)
+- [链恢复](./recovery/)
 
 
 
