@@ -18,7 +18,7 @@
 - [国内数藏行业现状与思考](./docs/12.%E6%95%B0%E8%97%8F%E8%A1%8C%E4%B8%9A%E7%8E%B0%E7%8A%B6%E4%B8%8E%E6%80%9D%E8%80%83.md)
 - [Opensea协议分析](./docs/13.Opensea协议分析.md)
 - [海外版NFTSaaS](./docs/14.%E6%B5%B7%E5%A4%96%E7%89%88NFTSaaS.md)
-- [东南亚6国区块链和NFT基本调研](./docs/NFT_in_SEA_research/README.md)
+- [东南亚6国区块链和NFT基本调研](./docs/NFT_in_SEA_research/)
   - [越南](./docs/NFT_in_SEA_research/越南.md)
   - [印度尼西亚](./docs/NFT_in_SEA_research/印度尼西亚.md)
   - [泰国](./docs/NFT_in_SEA_research/泰国.md)
