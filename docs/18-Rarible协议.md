@@ -23,13 +23,33 @@ Rarible 多链 SDK 使应用程序能够轻松地与 Rarible 协议交互：在�
 
 ---
 
+
+
+##  干嘛用的？
+
+Rarible开源了后端前端代码，并提供查询API（封装成了JavaScript的SDK），因此可以应用以下场景：
+
+- 构建自己的NFT交易平台
+- 构建自己的NFT相关应用平台
+- 查询Rarible的API获取链上NFT数据
+- 通过Rarible的API发型NFT
+- 构建自己的DApp（前端 + 后端）
+- 其他
+
+
+## 能否符合我们的应用场景？
+
+完全可以。
+
+但是， 因为Rarible只提供了JavaScript的SDK， 这一点需要注意。
+
+
+
+
+## 使用Rarible的示例
+
 示例
 
 https://github.com/qiyichain/rarible-nft
-
-
-
-
-
 
 
