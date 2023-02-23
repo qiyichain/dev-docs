@@ -40,3 +40,9 @@
   - [新加坡](./docs/NFT_in_SEA_research/新加坡.md)
 - [web3工具](./docs/19-Web3%E5%B7%A5%E5%85%B7.md)
 - [slash详细分析](./docs/20-slash%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90.md)
+
+
+
+# 稀台+
+
+- AIGC： [稀台+AIGC](./docs/22.AIGC_stable_defussion.md)
