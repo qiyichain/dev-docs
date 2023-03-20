@@ -26,6 +26,10 @@
 
 # 出海
 
+
+**以下内容以移至:https://github.com/fantopia-dev/docs**
+
+
 - Fansland
   - [1.技术预研](./docs/fansland/1.技术预研.md)
   - [2.法币接入](./docs/fansland/2.法币支付.md)
