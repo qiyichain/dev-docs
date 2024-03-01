@@ -9,7 +9,7 @@
 
 .PHONY:genesis
 genesis:
-	python3 auto-fill-genesis.py 
+	python3 auto-fill-genesis.py
 
 init: genesis
 	geth --datadir=./nodes/node0/data init ./genesis.json
@@ -40,4 +40,6 @@ gen-bootnode:
 	bootnode -genkey bnode/boot.key
 
 start-bootnode:
-	bootnode -nodekey bnode/boot.key  -addr 172.16.100.101:30301
+	bootnode -nodekey bnode/boot.key  -addr 127.0.0.1:30301
+
+#bootnode -nodekey bnode/boot.key  -addr 172.16.100.101:30301

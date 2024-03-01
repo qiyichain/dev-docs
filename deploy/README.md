@@ -11,7 +11,7 @@
 ## 关键参数
 
 - chainId: `12285`
-- 初始测试账户（同时作为系统合约的admin）：`0xf513e4e5Ded9B510780D016c482fC158209DE9AA`
+- 初始测试账户（同时作为系统合约的admin）：`0x51Bdbad59a24207b32237e5c47E866A32a8D5Ed8`
 - 节点数量：4
 
 
@@ -69,7 +69,7 @@
 > 注意：如果不需要节点状态监控可以去掉`--metrics`所有的配置，如需要则需要配置influxDB
 
 
-- node0启动脚本: 
+- node0启动脚本:
     ```shell
     nohup geth \
     --datadir /data/node0/data \
